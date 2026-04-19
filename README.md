@@ -5,6 +5,10 @@ and convert any amount between two supported currencies, using the free
 [Frankfurter](https://www.frankfurter.dev/) API (ECB daily reference rates,
 no API key required).
 
+Website: <https://pottera011.github.io/currency-converter-extension/>
+
+Privacy policy: <https://pottera011.github.io/currency-converter-extension/privacy.html>
+
 ## Features
 
 - Toolbar popup (~340px wide), no content scripts
@@ -15,6 +19,20 @@ no API key required).
   (`chrome.storage.local`)
 - Graceful loading / error states
 - Light + dark theme via `prefers-color-scheme`
+
+## Privacy
+
+Currency Converter does not collect, sell, share, or transmit personal
+information. It stores only your last selected amount and currency pair locally
+with `chrome.storage.local`, so the popup can restore your previous settings.
+Conversion requests are sent directly to the Frankfurter API for exchange
+rates; no account, API key, analytics, cookies, identity services, browsing
+history access, or page content access are used.
+
+For Chrome Web Store submission, use this hosted privacy policy URL:
+<https://pottera011.github.io/currency-converter-extension/privacy.html>
+
+The repository copy is in [PRIVACY.md](PRIVACY.md).
 
 ## Install (Load Unpacked)
 
@@ -34,6 +52,7 @@ no API key required).
 | `popup.html` | Popup markup (amount input, from/to selects, swap, result) |
 | `popup.css` | Popup styling (light/dark) |
 | `popup.js` | Fetches currencies and conversions, handles events + persistence |
+| `PRIVACY.md` | Privacy statement for users and Chrome Web Store review |
 | `icons/icon{16,32,48,128}.png` | Toolbar + store icons (placeholder) |
 
 ## API notes
