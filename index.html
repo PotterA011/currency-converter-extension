@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Convert currencies with daily ECB reference rates from Frankfurter."
+    />
+    <title>Currency Converter</title>
+    <link rel="icon" href="icons/icon32.png" />
+    <link rel="apple-touch-icon" href="icons/icon128.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="converter" aria-busy="false">
+        <header class="mast">
+          <img class="mark" src="icons/icon128.png" width="56" height="56" alt="" />
+          <div>
+            <h1>Currency Converter</h1>
+            <p id="rateMeta" aria-live="polite">Loading rates...</p>
+          </div>
+        </header>
+
+        <div class="control amount-row">
+          <label for="amount">Amount</label>
+          <input
+            id="amount"
+            type="number"
+            inputmode="decimal"
+            step="any"
+            min="0"
+            value="1"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+
+        <div class="pair-row">
+          <div class="control">
+            <label for="from">From</label>
+            <select id="from" disabled>
+              <option>Loading...</option>
+            </select>
+          </div>
+
+          <button
+            id="swap"
+            class="swap"
+            type="button"
+            title="Swap currencies"
+            aria-label="Swap currencies"
+            disabled
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M7 7h11l-3-3 1.4-1.4L21.8 7.8 16.4 13.2 15 11.8 18 8.8H7V7zm10 10H6l3 3-1.4 1.4L2.2 16.2l5.4-5.4L9 12.2 6 15.2h11V17z"
+              />
+            </svg>
+          </button>
+
+          <div class="control">
+            <label for="to">To</label>
+            <select id="to" disabled>
+              <option>Loading...</option>
+            </select>
+          </div>
+        </div>
+
+        <section class="result" aria-live="polite">
+          <div class="result-value" id="resultValue">-</div>
+          <div class="result-rate" id="resultRate"></div>
+        </section>
+
+        <p class="error" id="error" role="alert" hidden></p>
+
+        <footer class="foot">
+          <span>
+            Rates from
+            <a href="https://www.frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>
+            (ECB, daily)
+          </span>
+          <span>
+            <a href="privacy.html">Privacy</a>
+            <span aria-hidden="true"> · </span>
+            <a href="https://github.com/PotterA011/currency-converter-extension" target="_blank" rel="noopener">GitHub</a>
+          </span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
